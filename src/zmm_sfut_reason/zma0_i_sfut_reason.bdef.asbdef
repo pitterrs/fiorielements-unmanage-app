@@ -1,0 +1,13 @@
+managed implementation in class ZMA0_CL_SFUT_REASON_BHV unique;
+strict;
+
+define behavior for ZMA0_I_SFUT_REASON //alias <alias_name>
+persistent table zma0_sfut_reason
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+}

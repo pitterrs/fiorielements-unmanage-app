@@ -1,0 +1,9 @@
+projection;
+strict;
+
+define behavior for ZMA0_C_SFUT_PLANT alias Plant
+{
+  use create;
+//  use update;
+  use delete;
+}

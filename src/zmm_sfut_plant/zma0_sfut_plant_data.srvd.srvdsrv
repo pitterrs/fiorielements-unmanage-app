@@ -1,0 +1,4 @@
+@EndUserText.label: 'Data Definition for Plant Maintanence'
+define service ZMA0_SFUT_PLANT_DATA {
+  expose ZMA0_C_SFUT_PLANT as PlantDataSet;
+}

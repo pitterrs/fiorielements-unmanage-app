@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Reasons'
+define service ZMA0_REASON_DATA {
+  expose ZMA0_C_SFUT_REASON as ReasonDataSet;
+}

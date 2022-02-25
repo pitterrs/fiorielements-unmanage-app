@@ -1,0 +1,13 @@
+managed implementation in class ZMA0_CL_SFUT_PLANT_BHV unique;
+strict;
+
+define behavior for ZMA0_I_SFUT_PLANT //alias <alias_name>
+persistent table ZMA0_SFUT_PLANT
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+//  update;
+  delete;
+}

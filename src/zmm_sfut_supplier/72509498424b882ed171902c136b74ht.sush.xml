@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSH" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <HEAD>
+    <NAME>72509498424B882ED171902C136B74</NAME>
+    <TYPE>HT</TYPE>
+    <DISPLAY_NAME>R3TR IWSG ZMA0_SUPPLIER_DATA_UI_O2_0001</DISPLAY_NAME>
+    <DEVCLASS>ZMM_SFUT_SUPPLIER</DEVCLASS>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </HEAD>
+   <USOBX>
+    <USOBX>
+     <NAME>72509498424B882ED171902C136B74</NAME>
+     <TYPE>HT</TYPE>
+     <OBJECT>S_SERVICE</OBJECT>
+     <OKFLAG>X</OKFLAG>
+    </USOBX>
+    <USOBX>
+     <NAME>72509498424B882ED171902C136B74</NAME>
+     <TYPE>HT</TYPE>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <OKFLAG>Y</OKFLAG>
+    </USOBX>
+   </USOBX>
+   <USOBT>
+    <USOBT>
+     <NAME>72509498424B882ED171902C136B74</NAME>
+     <TYPE>HT</TYPE>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <FIELD>ACTVT</FIELD>
+     <LOW>02</LOW>
+    </USOBT>
+    <USOBT>
+     <NAME>72509498424B882ED171902C136B74</NAME>
+     <TYPE>HT</TYPE>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <FIELD>ACTVT</FIELD>
+     <LOW>03</LOW>
+    </USOBT>
+   </USOBT>
+   <USOBX_EXT>
+    <item>
+     <OBJECT>S_SERVICE</OBJECT>
+     <TTEXT>Check at Start of External Services</TTEXT>
+     <OCLSS>AAAB</OCLSS>
+     <OKFLAG>X</OKFLAG>
+     <DEVCLASS>S_PROFGEN</DEVCLASS>
+     <PS_POSID>BC-SEC-AUT-PFC</PS_POSID>
+     <CI_TEXT>Check</CI_TEXT>
+     <CH_TEXT>Check</CH_TEXT>
+     <PR_TEXT>No</PR_TEXT>
+     <EXCEP>3</EXCEP>
+     <EXCEP_TX>Okay</EXCEP_TX>
+     <EXCEP_ICON>@08@</EXCEP_ICON>
+    </item>
+    <item>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <TTEXT>Authorization Object for Supplier users</TTEXT>
+     <OCLSS>CPAE</OCLSS>
+     <OKFLAG>Y</OKFLAG>
+     <DEVCLASS>ZMM_SFUT_SUPPLIER</DEVCLASS>
+     <CI_TEXT>Check/Maintain</CI_TEXT>
+     <CH_TEXT>Check</CH_TEXT>
+     <PR_TEXT>Yes</PR_TEXT>
+     <EXCEP>3</EXCEP>
+     <EXCEP_TX>Okay</EXCEP_TX>
+     <EXCEP_ICON>@08@</EXCEP_ICON>
+    </item>
+   </USOBX_EXT>
+   <USOBT_EXT>
+    <item>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <TTEXT>Authorization Object for Supplier users</TTEXT>
+     <FIELD>ACTVT</FIELD>
+     <LOW>02</LOW>
+    </item>
+    <item>
+     <OBJECT>Z_SFUT_SUP</OBJECT>
+     <TTEXT>Authorization Object for Supplier users</TTEXT>
+     <FIELD>ACTVT</FIELD>
+     <LOW>03</LOW>
+    </item>
+   </USOBT_EXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

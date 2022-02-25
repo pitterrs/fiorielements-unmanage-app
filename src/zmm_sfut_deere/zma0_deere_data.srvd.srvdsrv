@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Deere Data Set'
+define service ZMA0_DEERE_DATA {
+  expose zma0_ce_deere as DeereDataSet;
+}

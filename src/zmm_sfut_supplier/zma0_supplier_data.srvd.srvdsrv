@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Supplier Data Set'
+define service ZMA0_SUPPLIER_DATA {
+  expose zma0_ce_supplier as SupplierDataSet;
+}

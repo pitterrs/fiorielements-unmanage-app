@@ -1,0 +1,9 @@
+projection;
+strict;
+
+define behavior for ZMA0_C_SFUT_REASON alias Reason
+{
+  use create;
+  use update;
+  use delete;
+}

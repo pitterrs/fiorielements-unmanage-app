@@ -1,0 +1,6 @@
+CLASS zma0_cl_sfut_plant_bhv DEFINITION PUBLIC ABSTRACT FINAL
+    FOR BEHAVIOR OF zma0_i_sfut_plant.
+ENDCLASS.
+
+CLASS zma0_cl_sfut_plant_bhv IMPLEMENTATION.
+ENDCLASS.

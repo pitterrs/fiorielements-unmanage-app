@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class for the Supplier Follow-Up Solution</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>New Date needs to be greater than the actual date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>New Quantity needs to be greater than 0.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Partial Date needs to be greater than the actual date and New Date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Partial Quantity needs to be greater than 0.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>New Quantity + Partial Quantity must equal to the Balance Qty with ASN.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Invalid Reason. Select a valid option.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMA0_SFUT_MESSAGE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Error when trying to update or create the &amp;1 &amp;2 &amp;3.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

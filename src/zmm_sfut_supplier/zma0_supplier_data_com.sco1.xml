@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SCO1" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SCO1>
+    <COMMUNICATION_SCENARIO_ID>ZMA0_SUPPLIER_DATA_COM</COMMUNICATION_SCENARIO_ID>
+    <COMMUNICATION_SCENARIO_TYPE>1</COMMUNICATION_SCENARIO_TYPE>
+    <ALLOWED_CA_INSTANCES>1</ALLOWED_CA_INSTANCES>
+    <CONTAINS_INBOUND>X</CONTAINS_INBOUND>
+    <IB_TRUST_PSE_ID>SSLC_CUSTOMER_DEFAULT</IB_TRUST_PSE_ID>
+    <IB_BASIC_AUTH>X</IB_BASIC_AUTH>
+    <INBOUND_ROLE_ID>ZCR_CKJSY7VOFUPNZIEJBAYBEUB2II</INBOUND_ROLE_ID>
+    <OB_AUTH_PSE_ID>SSLC_CUSTOMER_DEFAULT</OB_AUTH_PSE_ID>
+    <OB_TRUST_PSE_ID>SSLC_CUSTOMER_DEFAULT</OB_TRUST_PSE_ID>
+    <OB_BASIC_AUTH>X</OB_BASIC_AUTH>
+    <OB_X509_AUTH>X</OB_X509_AUTH>
+    <OB_OAUTH2_AUTH>X</OB_OAUTH2_AUTH>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <MAIN_OBJECT>
+     <NAME>ZMA0_SUPPLIER_DATA_COM</NAME>
+     <TYPE>SCO1</TYPE>
+     <DESCRIPTION>Communication Scenario for the Supplier Data Set API Access</DESCRIPTION>
+    </MAIN_OBJECT>
+    <SCOPE_STATUS>3</SCOPE_STATUS>
+    <SCOPE_STATUS_TEXT>On</SCOPE_STATUS_TEXT>
+    <INBOUND>
+     <item>
+      <COMMUNICATION_SCENARIO_ID>ZMA0_SUPPLIER_DATA_COM</COMMUNICATION_SCENARIO_ID>
+      <INBOUND_ID>0001</INBOUND_ID>
+      <IBS_ID>ZMA0_SUPPLIER_DATA_API_O2_IWSG</IBS_ID>
+      <IBS_TYPE>IWSG</IBS_TYPE>
+      <IBS_TYPE_TEXT>OData V2</IBS_TYPE_TEXT>
+      <TEXT>ZMA0_SUPPLIER_DATA_API_O2</TEXT>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <SRVC_NAME>99157E1A060CCE9CD2C13DB2137D9A</SRVC_NAME>
+     </item>
+    </INBOUND>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>Z_SFUT_API</AUTH_OBJECT>
+      <STATUS>U</STATUS>
+      <TEXT>Authorization Object for API access to the Supplier Data Set</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <AUTH_OBJECT>Z_SFUT_API</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Authorization Object for API access to the Supplier Data Set</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Display</VALUE>
+          <VALUES>
+           <item>
+            <LOW_VALUE>03</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+   </SCO1>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,46 @@
+unmanaged implementation in class zma0_cl_sfut_supplier_bhv unique;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for zma0_ce_supplier alias SupplierData
+//late numbering
+//lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly ) werks,
+  plant_name,
+  berid,
+  bertx,
+  ekgrp,
+  ebeln,
+  ebelp,
+  etenr,
+  matnr,
+  maktx,
+  dispo,
+  lifnr,
+  vendor_name,
+  eindt,
+  calc_ship_date,
+  pabnum,
+  pabpos,
+  curr_date,
+  curr_qty,
+  in_transit_qty,
+  bal_qty_w_asn,
+  status_txt,
+  bsart,
+  full_name,
+  smtp_addr,
+  order_type_txt,
+  ship_from,
+  ship_from_name,
+  ship_to,
+  ship_status;
+
+  update;
+
+  // Instance action and dynamic action control
+  action ( features : instance ) accept result [1] $self;
+}
