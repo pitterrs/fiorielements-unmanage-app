@@ -18,9 +18,9 @@ CLASS zma0_cl_sfut_destination DEFINITION PUBLIC FINAL CREATE PUBLIC .
 
     DATA rfc_destination TYPE rfcdest.
 
-*    CONSTANTS destination_name TYPE string VALUE 'CAG_RFC'.
+    CONSTANTS destination_name TYPE string VALUE 'CAG_RFC'.
 *    CONSTANTS destination_name TYPE string VALUE 'QAG_RFC'.
-    CONSTANTS destination_name TYPE string VALUE 'PAG_RFC'.
+*    CONSTANTS destination_name TYPE string VALUE 'PAG_RFC'.
 
 ENDCLASS.
 

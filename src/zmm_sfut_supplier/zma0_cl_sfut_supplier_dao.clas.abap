@@ -2,6 +2,9 @@ CLASS zma0_cl_sfut_supplier_dao DEFINITION PUBLIC FINAL CREATE PUBLIC .
 
   PUBLIC SECTION.
 
+    TYPES tt_suppliers_plants TYPE TABLE OF zma0_sfut_plant
+      WITH DEFAULT KEY.
+
     TYPES tt_schedule_lines TYPE TABLE OF zma0_ce_supplier
       WITH DEFAULT KEY.
 
@@ -31,17 +34,14 @@ CLASS zma0_cl_sfut_supplier_dao DEFINITION PUBLIC FINAL CREATE PUBLIC .
 
     METHODS retrieve_schedule_lines
       IMPORTING
-        im_offset        TYPE int8
-        im_page_size     TYPE int8
-        im_sql_query     TYPE zma0_sfut_sql_query
-        im_sort          TYPE string
+        im_offset           TYPE int8
+        im_page_size        TYPE int8
+        im_suppliers_plants TYPE
+                          zma0_cl_sfut_supplier_dao=>tt_suppliers_plants
+        im_sql_query        TYPE zma0_sfut_sql_query
+        im_sort             TYPE string
       RETURNING
         VALUE(re_result) TYPE zma0_sfut_supplier_if_t .
-
-    METHODS get_supplier_codes
-      RETURNING
-        VALUE(re_result)
-          TYPE zma0_cl_sfut_supplier_dao=>tt_supplier_code.
 
     METHODS retrieve_supplier_actions
       IMPORTING
@@ -84,6 +84,13 @@ CLASS zma0_cl_sfut_supplier_dao DEFINITION PUBLIC FINAL CREATE PUBLIC .
       RETURNING
         VALUE(re_result) TYPE zma0_ce_supplier-eindt_color.
 
+    METHODS retrieve_suppliers_plants
+      IMPORTING
+        im_supplier      TYPE zma0_ce_supplier-lifnr
+      RETURNING
+        value(re_result) TYPE
+                         zma0_cl_sfut_supplier_dao=>tt_suppliers_plants.
+
 ENDCLASS.
 
 
@@ -93,11 +100,16 @@ CLASS ZMA0_CL_SFUT_SUPPLIER_DAO IMPLEMENTATION.
 
   METHOD constructor.
 
+    DATA(suppliers_plants) = me->retrieve_suppliers_plants(
+        im_supplier = '0000002666'
+       ).
+
     DATA(schedule_lines) = me->retrieve_schedule_lines(
-        im_offset    = im_offset
-        im_page_size = im_page_size
-        im_sql_query = im_sql_query
-        im_sort      = im_sort
+        im_offset           = im_offset
+        im_page_size        = im_page_size
+        im_suppliers_plants = suppliers_plants
+        im_sql_query        = im_sql_query
+        im_sort             = im_sort
     ).
 
     DATA(supplier_actions) = me->retrieve_supplier_actions(
@@ -182,18 +194,6 @@ CLASS ZMA0_CL_SFUT_SUPPLIER_DAO IMPLEMENTATION.
 
   ENDMETHOD.
 
-
-  METHOD get_supplier_codes.
-
-    APPEND '0000002666' TO re_result.
-*    APPEND '0000306393' TO re_result.
-*    APPEND '0000010366' TO re_result.
-*    APPEND '0000306393' TO re_result.
-*    APPEND '0000013230' TO re_result.
-
-  ENDMETHOD.
-
-
   METHOD get_status_text.
 
     re_result = COND #(
@@ -255,12 +255,11 @@ CLASS ZMA0_CL_SFUT_SUPPLIER_DAO IMPLEMENTATION.
     " Check if the user is from the API, filter by the im_sql_query
     AUTHORITY-CHECK OBJECT 'Z_SFUT_API' ID 'ACTVT' FIELD '03' .
     IF sy-subrc IS NOT INITIAL.
-      " Check if the user is from the Supplier App, MUST user the
-      " supplier code from the get_supplier_codes
+      " Check if the user is from the Supplier App
       AUTHORITY-CHECK OBJECT 'Z_SFUT_SUP' ID 'ACTVT' FIELD '03'.
       CHECK sy-subrc IS INITIAL.
-      DATA(lt_authorized_suppliers) = me->get_supplier_codes( ).
-      CHECK lt_authorized_suppliers IS NOT INITIAL.
+*      DATA(lt_authorized_suppliers) = me->get_supplier_codes( ).
+*      CHECK lt_authorized_suppliers IS NOT INITIAL.
     ENDIF.
 
     CALL FUNCTION 'ZMA0_SFUT_GET_SUPPLIER_DATA'
@@ -268,7 +267,7 @@ CLASS ZMA0_CL_SFUT_SUPPLIER_DAO IMPLEMENTATION.
       EXPORTING
         im_offset             = CONV int4( im_offset )
         im_page_size          = lv_page_size
-        im_suppliers          = lt_authorized_suppliers
+        im_suppliers_plants   = im_suppliers_plants
         im_search_expression  = im_sql_query
         im_sql_sort           = im_sort
       IMPORTING
@@ -285,4 +284,15 @@ CLASS ZMA0_CL_SFUT_SUPPLIER_DAO IMPLEMENTATION.
     re_result = lt_schedule_lines.
 
   ENDMETHOD.
+
+  METHOD retrieve_suppliers_plants.
+
+    SELECT supplier,
+           plant
+      FROM zma0_sfut_plant
+      WHERE supplier = @im_supplier
+      INTO CORRESPONDING FIELDS OF TABLE @re_result.
+
+  ENDMETHOD.
+
 ENDCLASS.
